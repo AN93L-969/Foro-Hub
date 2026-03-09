@@ -26,7 +26,8 @@ public class Respuesta {
     @ManyToOne
     private Topico topico;
 
-    private LocalDateTime fechaCreacion;
+    @Column(nullable = false)
+    private LocalDateTime fechaCreacion = LocalDateTime.now();
 
     @ManyToOne
     private Usuario autor;
