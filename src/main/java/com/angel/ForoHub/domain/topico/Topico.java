@@ -43,12 +43,11 @@ public class Topico {
     @OneToMany
     private List<Respuesta> respuestas;
 
-    public Topico(DatosRegistroTopico datos) {
-        this.id = null;
+    public Topico(DatosRegistroTopico datos, Usuario autor, Curso curso) {
         this.titulo = datos.titulo();
         this.mensaje = datos.mensaje();
-        this.autor = new Usuario();
-        this.curso = new Curso();
+        this.autor = autor;
+        this.curso = curso;
     }
 
     public void actualizarInformaciones(@Valid DatosActualizacionTopico datos) {
